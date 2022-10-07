@@ -22,11 +22,9 @@ public class Articulo {
     private String nombre;
     @Column(nullable = false)
     private Date fecha_registro;
-
     @ManyToOne
     @JoinColumn(name = "categorias_id_ctg")
     private Categoria categoria;
-
     @Column(nullable = false)
     private int stock;
     @Column(nullable = false,scale = 2)
