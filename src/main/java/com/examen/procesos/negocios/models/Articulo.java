@@ -20,10 +20,11 @@ public class Articulo {
     private String codigo;
     @Column(length = 100, nullable = false)
     private String nombre;
+    @Column(length = 300, nullable = false)
+    private String descripcion;
     @Column(nullable = false)
     private Date fecha_registro;
     @ManyToOne
-    @JoinColumn(name = "categorias_id_ctg")
     private Categoria categoria;
     @Column(nullable = false)
     private int stock;
