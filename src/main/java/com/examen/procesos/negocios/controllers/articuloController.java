@@ -18,21 +18,22 @@ public class articuloController {
     private ArticuloRepository articuloRepository;
 
     @GetMapping("/articulos")
-    public ResponseEntity listarArticulos()
-    {
+    public ResponseEntity listarArticulos() {
         List<Articulo> articulos = articuloRepository.findAll();
-        if(articulos.isEmpty())
-        {
+        if (articulos.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         return new ResponseEntity(articulos, HttpStatus.OK);
 
     }
 
+    @GetMapping("/articulo/codigo/{codigo}")
+    public ResponseEntity getArticulo(@PathVariable String codigo) {
+        List<Articulo> articulo = articuloRepository.findAllByCodigo(codigo);
+        if (articulo.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return new ResponseEntity(articulo, HttpStatus.OK);
 
-
-
-
-
-
+    }
 }
