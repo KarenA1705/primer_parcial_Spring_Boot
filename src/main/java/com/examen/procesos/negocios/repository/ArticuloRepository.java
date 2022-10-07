@@ -5,9 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface ArticuloRepository extends JpaRepository<Articulo, String> {
+public interface ArticuloRepository extends JpaRepository<Articulo, Long> {
 
-    List<Articulo> findAllByCodigoArticulo(String codigo);
+    List<Articulo> findAllByCodigo(String codigo);
 
 
 }
